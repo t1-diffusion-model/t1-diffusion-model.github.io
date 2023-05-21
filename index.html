@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>T1 Diffusion Model</title>
+
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+    <script src="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js"></script>
+    <link rel="stylesheet" href="/path/to/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery-highlight@3.5.0/jquery.highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                T1: Scaling Diffusion Probabilistic Fields to <br> High-Resolution on Unified Visual Modalities</br>
+                <small>
+                </small>
+            </h2>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="#">
+                        <image src="https://img.icons8.com/plasticine/100/null/stack-of-paper.png" height="60px">
+                            <h4><strong>Paper (TBD)</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <image src="https://img.icons8.com/external-bearicons-outline-color-bearicons/64/null/external-Demo-miscellany-texts-and-badges-bearicons-outline-color-bearicons.png" height="60px">
+                            <h4><strong>Demo (TBD)</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                        <image src="https://img.icons8.com/plasticine/100/null/github-squared.png" height="60px">
+                            <h4><strong>Code (TBD)</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <img src="bi-noising.png" alt="teaser" width="100%">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Diffusion Probabilistic Field (DPF) models the distribution of continuous functions defined over metric spaces.
+                    While DPF shows great potential for unifying data generation of various modalities including images, videos, and 3D geometry, it does not scale to a higher data resolution.
+                    This can be attributed to the ``scaling property'', where it is difficult for the model to capture local structures through uniform sampling.
+                    To this end, we propose a new model comprising of a view-wise sampling algorithm to focus on local structure learning, and incorporating additional guidance, \emph{e.g.}, text description, to complement the global geometry.
+                    The model can be scaled to generate high-resolution data while unifying multiple modalities.
+                    Experimental results on data generation in various modalities demonstrate the effectiveness of our model, as well as its potential as a foundation framework for scalable modality-unified visual content generation.                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    TL;DR
+                </h3>
+                <div>
+
+                </div>    
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h3>
+                    Acknowledgements
+                </h3>
+                <p class="text-justify">
+                    The website template was borrowed from <a href="https://jonbarron.info/mipnerf360/">Mip-NeRF
+                        360</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+<script
+	type="module"
+	src="https://gradio.s3-us-west-2.amazonaws.com/3.12.0/gradio.js"
+></script>
+<script>
+    const viewers = document.querySelectorAll(".image-compare");
+    viewers.forEach((element) => {
+        let view = new ImageCompare(element, {
+            hoverStart: true,
+            addCircle: true
+        }).mount();
+    });
+
+    $(document).ready(function () {
+        var editor = CodeMirror.fromTextArea(document.getElementById("bibtex"), {
+            lineNumbers: false,
+            lineWrapping: true,
+            readOnly: true
+        });
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    });
+</script>
+
+</html>
+
+</html>
